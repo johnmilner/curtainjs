@@ -63,23 +63,23 @@
 			void main() {
 
 				vec3 vertexPosition = aVertexPosition;
-
+				
 				// get the distance between our vertex and the mouse position
 				float distanceFromMouse = distance(uMousePosition, vec2(vertexPosition.x, vertexPosition.y));
 
 				// calculate our wave effect
-				float waveSinusoid = cos(5.250 * (distanceFromMouse - (uTime / 100.0)));
+				float waveSinusoid = cos(9.999 * (distanceFromMouse + (uTime / 120.0)));
 
 				// attenuate the effect based on mouse distance
-				float distanceStrength = (0.4 / (distanceFromMouse + 0.4));
+				float distanceStrength = (.4 / (distanceFromMouse + .4));
 
 				// calculate our distortion effect
 				float distortionEffect = distanceStrength * waveSinusoid * uMouseMoveStrength;
 
 				// apply it to our vertex position
 				vertexPosition.z +=  distortionEffect / 15.0;
-				vertexPosition.x +=  (distortionEffect / 15.0 * (uResolution.x / uResolution.y) * (uMousePosition.x - vertexPosition.x));
-				vertexPosition.y +=  distortionEffect / 15.0 * (uMousePosition.y - vertexPosition.y);
+				vertexPosition.x +=  (distortionEffect / 15.0 * (uResolution.x / uResolution.y) * (uMousePosition.x - vertexPosition.x)) * .34;
+				vertexPosition.y +=  distortionEffect / 15.0 * (uMousePosition.y - vertexPosition.y) * .34;
 
 			   	gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
 
@@ -128,15 +128,6 @@
 		<script src="../../build/curtains.js" type="text/javascript"></script>
         <script src="js/simple.plane.setup.js" type="text/javascript"></script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-29368338-1"></script>
-		<script>
-		  	window.dataLayer = window.dataLayer || [];
-		  	function gtag(){dataLayer.push(arguments);}
-		  	gtag('js', new Date());
-
-		  	gtag('config', 'UA-29368338-1');
-		</script>
 
 	</body>
 </html>
