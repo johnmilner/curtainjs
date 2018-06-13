@@ -37,7 +37,7 @@ window.onload = function() {
     // create our plane
     multiTexturesPlane.onReady(function() {
         // when our plane is ready we add a click event listener that will switch the active texture value
-        planeElements[0].addEventListener("click", function() {
+        planeElements[0].addEventListener("mousemove", function() {
             if(activeTexture == 1) {
                 activeTexture = 2;
             }

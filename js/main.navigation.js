@@ -107,7 +107,8 @@ window.onload = function(){
             plane.uniforms.mouseTime.value++;
 
             plane.uniforms.mouseMoveStrength.value = mouseDelta;
-            mouseDelta = Math.max(0, mouseDelta * 0.995);
+            //smaller ripple movement, .0095 instead of .995
+            mouseDelta = Math.max(0, mouseDelta * 0.0095);
         });
     }
 

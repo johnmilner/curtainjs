@@ -115,7 +115,7 @@ window.onload = function(){
 
         // calculate the mouse move strength
         if(mouseLastPosition.x && mouseLastPosition.y) {
-            var delta = Math.sqrt(Math.pow(mousePosition.x - mouseLastPosition.x, 2) + Math.pow(mousePosition.y - mouseLastPosition.y, 2)) / 30;
+            var delta = Math.sqrt(Math.pow(mousePosition.x - mouseLastPosition.x, 2) + Math.pow(mousePosition.y - mouseLastPosition.y, 2)) / 300;
             delta = Math.min(4, delta);
             // update mouseDelta only if it increased
             if(delta >= mouseDelta) {

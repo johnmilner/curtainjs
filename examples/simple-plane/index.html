@@ -34,7 +34,7 @@
 			<div id="canvas"></div>
 
 			<div class="curtain" data-vs-id="simple-plane-vs" data-fs-id="simple-plane-fs">
-				<img src="images/plane-texture.jpg" data-sampler="simplePlaneTexture" />
+				<img src="images/grid.jpg" data-sampler="simplePlaneTexture" />
 			</div>
 		</div>
 
@@ -68,7 +68,7 @@
 				float distanceFromMouse = distance(uMousePosition, vec2(vertexPosition.x, vertexPosition.y));
 
 				// calculate our wave effect
-				float waveSinusoid = cos(5.0 * (distanceFromMouse - (uTime / 75.0)));
+				float waveSinusoid = cos(5.250 * (distanceFromMouse - (uTime / 100.0)));
 
 				// attenuate the effect based on mouse distance
 				float distanceStrength = (0.4 / (distanceFromMouse + 0.4));
